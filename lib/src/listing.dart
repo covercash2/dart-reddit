@@ -81,11 +81,11 @@ class Listing extends FilterableQuery implements Stream<ListingResult> {
  *
  * The method [fetchMore] allows to request the next batch of data.
  */
-class ListingResult extends MapMixin implements Map<String,dynamic> {
-  Map<String,dynamic> _result;
+class ListingResult extends MapMixin {
+  Map<String, dynamic> _result;
   Listing _listing;
 
-  ListingResult(Map<String,dynamic> this._result, Listing this._listing);
+  ListingResult(Map<String, dynamic> this._result, Listing this._listing);
 
   Future<ListingResult> fetchMore() => _listing.fetch();
 

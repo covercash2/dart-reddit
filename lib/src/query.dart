@@ -19,7 +19,7 @@ class Query {
     Response response = await _reddit._client.get(uri);
     Reddit.logger.finer("Response code ${response.statusCode}");
     try {
-      return JSON.decode(response.body) as Map;
+      return json.decode(response.body) as Map;
     } on FormatException catch (e) {
       var exc =
           new RedditApiException("Exception in parsing JSON from $uri", e);
